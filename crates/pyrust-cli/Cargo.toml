@@ -1,0 +1,17 @@
+[package]
+name = "pyrust-cli"
+description = "CLI for the pyrust"
+version = "0.0.1"
+authors = ["Eric Egli <43848365+eegli@users.noreply.github.com>"]
+edition = { workspace = true }
+rust-version = { workspace = true }
+license-file = { workspace = true }
+readme = { workspace = true }
+homepage = { workspace = true }
+repository = { workspace = true }
+
+
+[dependencies]
+pyrust-internal = { workspace = true }
+clap = { workspace = true }
+anyhow = { workspace = true }

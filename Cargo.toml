@@ -1,0 +1,29 @@
+
+[workspace]
+resolver = "2"
+members = ["crates/*"]
+
+
+[workspace.package]
+version = "0.0.0"
+edition = "2021"
+rust-version = "1.84.0"
+description = "A workspace for the pyrust project"
+license-file = "LICENSE"
+readme = "README.md"
+homepage = "https://github.com/eegli/pyrust"
+repository = "https://github.com/eegli/pyrust"
+authors = ["Eric Egli <43848365+eegli@users.noreply.github.com>"]
+
+
+[workspace.dependencies]
+pyrust-internal = { path = "crates/pyrust-internal" }
+pyrust-cli = { path = "crates/pyrust-cli" }
+
+
+num_cpus = "1.16.0"
+anyhow = "1.0"
+clap = { version = "4.5.28", features = ["derive"] }
+# "extension-module" tells pyo3 we want to build an extension module (skips linking against libpython.so)
+# "abi3-py39" tells pyo3 (and maturin) to build using the stable ABI with minimum Python version 3.9
+pyo3 = { version = "0.23.4", features = ["extension-module", "abi3-py39"] }

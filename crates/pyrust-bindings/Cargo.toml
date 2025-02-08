@@ -1,0 +1,23 @@
+[package]
+name = "pyrust-bindings"
+description = "Bindings for the pyrust-internal crate"
+version = "0.0.1"
+authors = ["Eric Egli <43848365+eegli@users.noreply.github.com>"]
+edition = { workspace = true }
+rust-version = { workspace = true }
+license-file = { workspace = true }
+readme = { workspace = true }
+homepage = { workspace = true }
+repository = { workspace = true }
+
+
+[lib]
+name = "pyrust"
+# "cdylib" is necessary to produce a shared library for Python to import from.
+crate-type = ["cdylib"]
+
+
+[dependencies]
+pyrust-internal = { workspace = true }
+pyrust-cli = { workspace = true }
+pyo3 = { workspace = true }

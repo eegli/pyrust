@@ -1,0 +1,14 @@
+[package]
+name = "pyrust-internal"
+description = "Internal crate for the pyrust project"
+version = "0.1.0"
+authors = ["Eric Egli <43848365+eegli@users.noreply.github.com>"]
+edition = { workspace = true }
+rust-version = { workspace = true }
+license-file = { workspace = true }
+readme = { workspace = true }
+homepage = { workspace = true }
+repository = { workspace = true }
+
+[dependencies]
+num_cpus = { workspace = true }

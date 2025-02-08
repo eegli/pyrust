@@ -1,0 +1,43 @@
+name: CI
+
+on:
+  pull_request:
+    branches:
+      - main
+  push:
+    branches:
+      - main
+
+jobs:
+  ci:
+    name: CI
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v5
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version-file: '.python-version'
+
+      - name: Install
+        run: make install
+
+      - name: Build
+        run: make bindings
+
+      - name: Lint
+        run: make lint
+
+      - name: Check types
+        run: make check_types
+
+      - name: Test
+        run: make test
+
+      - name: Build release
+        run: make build_release
