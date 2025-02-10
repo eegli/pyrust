@@ -99,7 +99,6 @@ source = { editable = "." }
 dev = [
     { name = "maturin" },
     { name = "mypy" },
-    { name = "pyrust" },
     { name = "pytest" },
     { name = "ruff" },
 ]
@@ -110,7 +109,6 @@ dev = [
 dev = [
     { name = "maturin", specifier = ">=1.8.1" },
     { name = "mypy", specifier = ">=1.15.0" },
-    { name = "pyrust" },
     { name = "pytest", specifier = ">=8.3.4" },
     { name = "ruff", specifier = ">=0.9.4" },
 ]

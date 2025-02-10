@@ -22,7 +22,6 @@ pyrust = "pyrust.__main__:launch_cli"
 dev = [
     "maturin>=1.8.1",
     "mypy>=1.15.0",
-    "pyrust",
     "pytest>=8.3.4",
     "ruff>=0.9.4",
 ]
