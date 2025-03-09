@@ -39,6 +39,7 @@ pub fn monte_carlo_pi(num_samples: usize, n_threads: Option<usize>) -> f32 {
     );
 
     let mut thread_handles = Vec::with_capacity(n_threads);
+    // Sure enough, we could simply compute an estimate for each thread and average them at the end. To show that mutexes allow sharing data between threads, we'll use a single estimate struct instead
     let estimates = Arc::new(Mutex::new(MonteCarloPiEstimate::default()));
 
     let start = Instant::now();
@@ -65,7 +66,8 @@ pub fn monte_carlo_pi(num_samples: usize, n_threads: Option<usize>) -> f32 {
     }
 
     println!("Estimating pi took {:?}", start.elapsed());
-
     let estimates = estimates.lock().unwrap();
+    println!("Simulation summary: {estimates:?}");
+
     4.0 * estimates.points_in_circle as f32 / estimates.points_total as f32
 }
