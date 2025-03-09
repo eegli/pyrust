@@ -20,6 +20,7 @@ test_command() {
 
 # entry points
 test_command "uv run pyrust num-cpus"
+test_command "uv run pyrust estimate-pi -n 100 -t 2"
 test_command "uv run python -m pyrust greet"
 
 echo -e "${GREEN}All tests passed!${NC}"

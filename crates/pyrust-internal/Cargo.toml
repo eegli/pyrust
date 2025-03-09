@@ -12,3 +12,4 @@ repository = { workspace = true }
 
 [dependencies]
 num_cpus = { workspace = true }
+rand = { workspace = true }
