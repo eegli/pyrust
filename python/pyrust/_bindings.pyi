@@ -2,7 +2,7 @@
 
 backend: str
 
-def num_cpus() -> int: ...
+def num_cpus(physical_only: bool = False) -> int: ...
 
 # cli is defined as a submodule:
 # https://pyo3.rs/v0.23.4/module.html#python-submodules. note that

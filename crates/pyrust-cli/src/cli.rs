@@ -16,9 +16,13 @@ pub enum Subcommand {
         name: String,
     },
 
-    /// Print the number of CPUs available on the system.
+    /// Print the number of (logical) CPU cores available on the system.
     #[clap(name = "num-cpus")]
-    NumCPUs,
+    NumCPUs {
+        #[clap(long, short, default_value = "false")]
+        /// Only count physical CPU cores.
+        physical: bool,
+    },
 
     /// Estimate the value of pi using a Monte Carlo method.
     EstimatePi {
@@ -43,8 +47,8 @@ pub fn run(args: Option<&Vec<String>>) {
         Subcommand::Greet { name } => {
             println!("Hello, {name}!",);
         }
-        Subcommand::NumCPUs => {
-            println!("{}", num_cpus_available());
+        Subcommand::NumCPUs { physical } => {
+            println!("{}", num_cpus_available(physical));
         }
         Subcommand::EstimatePi {
             num_samples,

@@ -1,5 +1,5 @@
 .PHONY: all
-all: install bindings lint check_types test build_release
+all: install bindings lint check_types test
 
 .PHONY: install
 install:

@@ -5,8 +5,9 @@ mod py_globals {
     use super::*;
 
     #[pyfunction]
-    pub fn num_cpus() -> usize {
-        pyrust_internal::num_cpus_available()
+    #[pyo3(signature = (physical_only=false))]
+    pub fn num_cpus(physical_only: bool) -> usize {
+        pyrust_internal::num_cpus_available(physical_only)
     }
 
     pub const BACKEND: &str = "Rust!";

@@ -5,7 +5,7 @@ from pyrust.cpu import num_cpus
 
 
 def test_num_cpus() -> None:
-    num_cpus_result = num_cpus()
+    num_cpus_result = num_cpus(physical_only=False)
     assert_type(num_cpus_result, int)
     assert num_cpus_result > 0
 
